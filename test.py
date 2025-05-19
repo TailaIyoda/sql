@@ -33,9 +33,9 @@ def print_only_water():
     sql = "SELECT * FROM pokemon WHERE pokemon_type = 'Water';"
     cursor.execute(sql)
     results = cursor.fetchall()
-    print('dex number     pokemon name          type')
+    print('dex number  pokemon name     type')
     for pokemon in results:
-        print(f"pokedex: {pokemon[0]:<5} pokemon: {pokemon[1]:<12} type: {pokemon[2]:<10}")
+        print(f"{pokemon[0]:<5} {pokemon[1]:<12} {pokemon[2]:<10}")
     db.close()
 
 #What would you like to do.\n1. Print all pokemon\n2. Print all water type pokemons            3. Print water ONLY pokemons\n
