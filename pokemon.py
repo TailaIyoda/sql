@@ -2,7 +2,11 @@ import sqlite3
 
 #variable
 DATABASE = "pokemon.db"
-
+VALID_TYPES = [
+    "normal", "fire", "water", "grass", "electric", "ice", "fighting", "poison",
+    "ground", "flying", "psychic", "bug", "rock", "ghost", "dragon", "dark",
+    "steel", "fairy"
+]
 #function
 def print_all_type(poke_type_string):
     db = sqlite3.connect(DATABASE)
@@ -41,12 +45,21 @@ while True:
         words = user_input.split()
         if len(words) >= 2:
             poke_type_string = words[1]
-            print_all_type(poke_type_string)
+            if poke_type_string in VALID_TYPES:
+                print_all_type(poke_type_string)
+            else:
+                print("That is not a type.")
 
     elif user_input.startswith("only "):
         words = user_input.split()
         if len(words) >= 2:
             poke_type_string = words[1]
-            print_only_type(poke_type_string)   
+            if poke_type_string in VALID_TYPES:
+                print_all_type(poke_type_string)
+            else:
+                print("That is not a type.")  
     elif user_input == "finish":
         break
+    
+    else:
+        print("Invalid input. Try again.")
