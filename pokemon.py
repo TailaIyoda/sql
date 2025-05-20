@@ -7,7 +7,18 @@ VALID_TYPES = [
     "ground", "flying", "psychic", "bug", "rock", "ghost", "dragon", "dark",
     "steel", "fairy"
 ]
-#function
+#functions
+def print_all_pokemon():
+    db = sqlite3.connect(DATABASE)
+    cursor = db.cursor()
+    sql = f"SELECT * FROM pokemon;"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    print('dex number  pokemon name    type')
+    for pokemon in results:
+        print(f"{pokemon[0]:<11} {pokemon[1]:<15} {pokemon[2]:<10}")
+    db.close()
+    
 def print_all_type(poke_type_string):
     db = sqlite3.connect(DATABASE)
     cursor = db.cursor()
@@ -31,8 +42,7 @@ def print_only_type(poke_type_string):
     db.close()
 
 
-#What would you like to do.\n1. Print all pokemon\n2. Print all water type pokemons            3. Print water ONLY pokemons\n
-#maincode
+#What would you like to do.\n1. Print all pokemon\n2. Print all water type pokemons            3. Print water ONLY pokemons\n#maincode
 while True:
     print('To print all pokemons, write "all"\n')
     print('To print pokemons that are the same types, write "print...."\nExample: "rint water" or "print fire"\n')
