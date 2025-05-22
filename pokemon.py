@@ -65,7 +65,7 @@ while True:
         if len(words) >= 2:
             poke_type_string = words[1]
             if poke_type_string in VALID_TYPES:
-                print_all_type(poke_type_string)
+                print_only_type(poke_type_string)
             else:
                 print("That is not a type.")  
     elif user_input == "finish":
