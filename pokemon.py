@@ -47,36 +47,28 @@ def print_only_type(poke_type_string):
 
 #ask what the user wants to print
 while True:
-    print('To print all pokemons, write "all"\n')
-    print('To print pokemons that are the same types, write "print...."\nExample: "rint water" or "print fire"\n')
-    print('If you want to print pokemons that are only one specific type, enter "only....."\nExample: "only water" or "only fire"\n')
-    user_input = input('If you want to finish type "finish"\n')
+    first_input = input('Would you like to input,\n1. all\n2.pokemons of type \n3. pokemons of only one type\nChoose from 1, 2 or 3')
+
 
 #code for when someone wants to print all pokemons
-    if user_input == "all":
+    if first_input == "1":
         print_all_pokemon()
 
 # code for when someone wants to print pokemons of a type
-    elif user_input.startswith("print "):
-        words = user_input.split()
-        if len(words) >= 2:
-            poke_type_string = words[1]
-            if poke_type_string in VALID_TYPES:
-                print_all_type(poke_type_string)
-            else:
-                print("That is not a type.")
+    if first_input == "2":
+        poke_type_string = input('Which type?\nnormal\nfire\nwater\ngrass\nelectric\nice\nfighting\npoison\nground\nflying\npsychic\nbug\nrock\nghost\ndragon\ndark\nsteel\nfairy\nEnter the pokemon type')
+        if poke_type_string in VALID_TYPES:
+            print_all_type(poke_type_string)
+        else:
+            print("That is not a type.")
 
 #code for when the user wants to print pokemons of only one type
-    elif user_input.startswith("only "):
-        words = user_input.split()
-        if len(words) >= 2:
-            poke_type_string = words[1]
-            if poke_type_string in VALID_TYPES:
-                print_only_type(poke_type_string)
-            else:
-                print("That is not a type.")  
-    elif user_input == "finish":
-        break
+    if first_input == "3":
+        poke_type_string = input('Which type?\nnormal\nfire\nwater\ngrass\nelectric\nice\nfighting\npoison\nground\nflying\npsychic\nbug\nrock\nghost\ndragon\ndark\nsteel\nfairy\nEnter the pokemon type')
+        if poke_type_string in VALID_TYPES:
+            print_only_type(poke_type_string)
+        else:
+            print("That is not a type.")
     
     #Solution for non pokemon type inputs
     else:
