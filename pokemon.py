@@ -47,7 +47,7 @@ def print_only_type(poke_type_string):
 
 #ask what the user wants to print
 while True:
-    first_input = input('Would you like to input,\n1. all\n2.pokemons of type \n3. pokemons of only one type\n4.finish\nChoose from 1, 2, 3 or 4\n')
+    first_input = input('Which one do you want to print,\n1. all\n2. select pokemons by type \n3. select pokemons with only one type\n4. exit\nChoose from 1, 2, 3 or 4\n')
 
 
 #code for when someone wants to print all pokemons
@@ -73,5 +73,4 @@ while True:
     if first_input == "4":
         break
     #Solution for non pokemon type inputs
-    else:
-        print("Invalid input. Try again.")
+
