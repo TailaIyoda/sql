@@ -27,9 +27,9 @@ def print_all_type(poke_type_string):
     sql = f"SELECT * FROM pokemon WHERE lower(pokemon_type) LIKE '%{poke_type_string.lower()}%';"
     cursor.execute(sql)
     results = cursor.fetchall()
-    print('dex number | pokemon name  |  type')
+    print('dex number  pokemon name    type\n---------------------------------------------')
     for pokemon in results:
-        print(f"{pokemon[0]:<12} {pokemon[1]:<16} {pokemon[2]:<11}")
+        print(f"{pokemon[0]:<11} {pokemon[1]:<15} {pokemon[2]:<10}")
     db.close()
 
 #function for printing all pokemons of only one type
@@ -39,7 +39,7 @@ def print_only_type(poke_type_string):
     sql = f"SELECT * FROM pokemon WHERE lower(pokemon_type) == '{poke_type_string.lower()}';"
     cursor.execute(sql)
     results = cursor.fetchall()
-    print('dex number  pokemon name    type')
+    print('dex number  pokemon name    type\n---------------------------------------------')
     for pokemon in results:
         print(f"{pokemon[0]:<11} {pokemon[1]:<15} {pokemon[2]:<10}")
     db.close()
@@ -51,7 +51,7 @@ def search_pokemon_name():
     sql = f"SELECT * FROM pokemon WHERE lower(pokemon_name) LIKE '%{poke_type_string.lower()}%';"
     cursor.execute(sql)
     results = cursor.fetchall()
-    print('dex number  pokemon name    type')
+    print('dex number  pokemon name    type\n--------------------------------')
     for pokemon in results:
         print(f"{pokemon[0]:<11} {pokemon[1]:<15} {pokemon[2]:<10}")
     db.close()
