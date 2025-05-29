@@ -24,7 +24,7 @@ def print_all_pokemon():
 def print_all_type(poke_type_string):
     db = sqlite3.connect(DATABASE)
     cursor = db.cursor()
-    sql = f"SELECT * FROM pokemon WHERE lower(pokemon_type) LIKE '%{poke_type_string}%';"
+    sql = f"SELECT * FROM pokemon WHERE lower(pokemon_type) LIKE '%{poke_type_string.lower()}%';"
     cursor.execute(sql)
     results = cursor.fetchall()
     print('dex number | pokemon name  |  type')
@@ -36,7 +36,7 @@ def print_all_type(poke_type_string):
 def print_only_type(poke_type_string):
     db = sqlite3.connect(DATABASE)
     cursor = db.cursor()
-    sql = f"SELECT * FROM pokemon WHERE lower(pokemon_type) == '{poke_type_string}';"
+    sql = f"SELECT * FROM pokemon WHERE lower(pokemon_type) == '{poke_type_string.lower()}';"
     cursor.execute(sql)
     results = cursor.fetchall()
     print('dex number  pokemon name    type')
@@ -57,7 +57,7 @@ while True:
 # code for when someone wants to print pokemons of a type
     if first_input == "2":
         poke_type_string = input('Which type?\nnormal\nfire\nwater\ngrass\nelectric\nice\nfighting\npoison\nground\nflying\npsychic\nbug\nrock\nghost\ndragon\ndark\nsteel\nfairy\nEnter the pokemon type\n')
-        if poke_type_string in VALID_TYPES:
+        if poke_type_string.lower() in VALID_TYPES:
             print_all_type(poke_type_string)
         else:
             print("That is not a type.")
@@ -65,7 +65,7 @@ while True:
 #code for when the user wants to print pokemons of only one type
     if first_input == "3":
         poke_type_string = input('Which type?\nnormal\nfire\nwater\ngrass\nelectric\nice\nfighting\npoison\nground\nflying\npsychic\nbug\nrock\nghost\ndragon\ndark\nsteel\nfairy\nEnter the pokemon type\n')
-        if poke_type_string in VALID_TYPES:
+        if poke_type_string.lower() in VALID_TYPES:
             print_only_type(poke_type_string)
         else:
             print("That is not a type.")
