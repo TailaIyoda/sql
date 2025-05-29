@@ -68,7 +68,7 @@ while True:
 
 # code for when someone wants to print pokemons of a type
     if first_input == "2":
-        poke_type_string = input('Which type?\nnormal\nfire\nwater\ngrass\nelectric\nice\nfighting\npoison\nground\nflying\npsychic\nbug\nrock\nghost\ndragon\ndark\nsteel\nfairy\nEnter the pokemon type\n')
+        poke_type_string = input('Which type?\nnormal   fire      water   grass   electric    ice        fighting    poison   ground\nflying   psychic   bug     rock    ghost       dragon     dark        steel    fairy\nEnter the pokemon type\n')
         if poke_type_string.lower() in VALID_TYPES:
             print_all_type(poke_type_string)
         else:
@@ -76,7 +76,7 @@ while True:
 
 #code for when the user wants to print pokemons of only one type
     if first_input == "3":
-        poke_type_string = input('Which type?\nnormal\nfire\nwater\ngrass\nelectric\nice\nfighting\npoison\nground\nflying\npsychic\nbug\nrock\nghost\ndragon\ndark\nsteel\nfairy\nEnter the pokemon type\n')
+        poke_type_string = input('normal   fire      water   grass   electric    ice        fighting    poison   ground\nflying   psychic   bug     rock    ghost       dragon     dark        steel    fairy\nEnter the pokemon type\n')
         if poke_type_string.lower() in VALID_TYPES:
             print_only_type(poke_type_string)
         else:
@@ -85,5 +85,7 @@ while True:
     if first_input == "4":
         poke_type_string = input('Enter pokemon name:\n')
         search_pokemon_name()
-    #Solution for non pokemon type inputs
+        
+    if first_input == "5":
+        break
 
