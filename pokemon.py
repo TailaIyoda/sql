@@ -59,7 +59,7 @@ def search_pokemon_name():
 
 #ask what the user wants to print
 while True:
-    first_input = input('Which one do you want to print,\n1. all\n2. select pokemons by type \n3. select pokemons with only one type\n4. search by name \n5. exit\n')
+    first_input = input('Which pokemons do you want to print?\n1. Print all pokemons\n2. select pokemons by pokemon type \n3. select pokemons with only one type\n4. search by name \n5. exit\n')
 
 
 #code for when someone wants to print all pokemons
