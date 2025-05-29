@@ -44,10 +44,22 @@ def print_only_type(poke_type_string):
         print(f"{pokemon[0]:<11} {pokemon[1]:<15} {pokemon[2]:<10}")
     db.close()
 
+#function for searching pokemon by name
+def search_pokemon_name():
+    db = sqlite3.connect(DATABASE)
+    cursor = db.cursor()
+    sql = f"SELECT * FROM pokemon WHERE lower(pokemon_name) LIKE '%{poke_type_string.lower()}%';"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    print('dex number  pokemon name    type')
+    for pokemon in results:
+        print(f"{pokemon[0]:<11} {pokemon[1]:<15} {pokemon[2]:<10}")
+    db.close()
+
 
 #ask what the user wants to print
 while True:
-    first_input = input('Which one do you want to print,\n1. all\n2. select pokemons by type \n3. select pokemons with only one type\n4. exit\nChoose from 1, 2, 3 or 4\n')
+    first_input = input('Which one do you want to print,\n1. all\n2. select pokemons by type \n3. select pokemons with only one type\n4. search by name \n5. exit\n')
 
 
 #code for when someone wants to print all pokemons
@@ -71,6 +83,7 @@ while True:
             print("That is not a type.")
     
     if first_input == "4":
-        break
+        poke_type_string = input('Enter pokemon name:\n')
+        search_pokemon_name()
     #Solution for non pokemon type inputs
 
