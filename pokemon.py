@@ -84,7 +84,7 @@ while True:  #keeps asking until input is 6 (exit)
         if poke_type_string.lower() in VALID_TYPES:
             print_all_type(poke_type_string)
         else:
-            print("That is not a type.")
+            print("\033[1mThat is not a type.")
 
 #code for when the user wants to print pokemons of only one type
     if first_input == "3":
@@ -92,7 +92,7 @@ while True:  #keeps asking until input is 6 (exit)
         if poke_type_string.lower() in VALID_TYPES:
             print_only_type(poke_type_string)
         else:
-            print("That is not a type.")
+            print("\033[1mThat is not a type.")
     
     elif first_input == "4": # search pokemon by pokemon
         poke_type_string = input('Enter pokemon name:\n')
@@ -105,11 +105,11 @@ while True:  #keeps asking until input is 6 (exit)
             if 1 <= pokedex_number <= 151:
                 search_pokemon_dex()
         except ValueError:
-            print('enter number from 1-151')
+            print('\033[1menter number from 1-151')
         
         
     elif first_input == '6': #exit program
         break 
 
     else:
-        print('please enter numbers 1-6')
+        print('\033[1mplease enter numbers 1-6')
