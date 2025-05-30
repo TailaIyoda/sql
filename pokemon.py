@@ -71,7 +71,7 @@ def search_pokemon_dex():
 
 
 while True:  #keeps asking until input is 6 (exit)
-    first_input = input('\n\033[1;36mWhich pokemons do you want to print?\n\033[38;5;208m1.\033[0m Print all pokemons\n\033[38;5;208m2.\033[0m select pokemons by pokemon type \n\033[38;5;208m3.\033[0m select pokemons with only one type\n\033[38;5;208m4.\033[0m search by name \\033[38;5;208m5.\033[0m search by pokedex number\n\033[38;5;208m6.\033[0m exit\n')
+    first_input = input('\n\033[1;36mWhich pokemons do you want to print?\n\033[38;5;208m1.\033[0m Print all pokemons\n\033[38;5;208m2.\033[0m select pokemons by pokemon type \n\033[38;5;208m3.\033[0m select pokemons with only one type\n\033[38;5;208m4.\033[0m search by name \n\033[38;5;208m5.\033[0m search by pokedex number\n\033[38;5;208m6.\033[0m exit\n')
 
 
 #code for when someone wants to print all pokemons
